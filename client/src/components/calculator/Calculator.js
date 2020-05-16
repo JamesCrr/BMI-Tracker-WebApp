@@ -121,6 +121,20 @@ class Calculator extends Component {
                         </div>
                     </div>
                     </div>
+                
+                
+                    {/* Back Button */}
+                    <div className="row">
+                        {
+                            this.props.auth.isAuthenticated ? null :
+                            <div className="center-align">
+                                <Link to="/" style={{marginTop:"30px",borderRadius:"3px",letterSpacing:"1.5px"}}
+                                className="btn waves-effect hoverable blue accent-3"> 
+                                Home
+                                </Link>
+                            </div>
+                        }
+                    </div>
                 </div>
 
             </div>

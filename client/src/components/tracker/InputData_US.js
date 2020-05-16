@@ -76,7 +76,8 @@ class InputData_US extends Component {
                     <button
                     style={{
                         borderRadius: "30px",
-                        zIndex: "0"
+                        zIndex: "0",
+                        letterSpacing:"1.5px"
                     }}
                     type="submit"
                     className="btn waves-effect hoverable blue accent-3"
@@ -95,7 +96,7 @@ class InputData_US extends Component {
 InputData_US.propTypes = {
     submitBMIData: PropTypes.func.isRequired,
     calculatedBMILocal: PropTypes.func.isRequired,
-    userid: PropTypes.string.isRequired,
+    userid: PropTypes.string,
     localEdit: PropTypes.bool.isRequired
 }
 const mapStateToProps = (state) => ({
