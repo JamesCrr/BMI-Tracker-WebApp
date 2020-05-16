@@ -18,6 +18,7 @@ import PrivateRoute from "./components/private-route/PrivateRoute";
 
 import Dashboard from "./components/home/Dashboard";
 import Graph from "./components/tracker/Tracker";
+import Calculator from "./components/calculator/Calculator";
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -45,6 +46,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/calculator" component={Calculator} />
 
             {/* <Switch> */}
               <PrivateRoute exact path="/dashboard" component={Dashboard} />

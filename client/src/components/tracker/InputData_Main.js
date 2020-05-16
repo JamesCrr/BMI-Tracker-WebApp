@@ -62,7 +62,7 @@ class InputData_Main extends Component {
                     <div className="col s12">
                         {
                             // Toggle between the 2 measurements based on input
-                            this.state.metric ? <InputDataMetric logDate={this.state.customDate}/> : <InputDataUS logDate={this.state.customDate}/>
+                            this.state.metric ? <InputDataMetric logDate={this.state.customDate} localEdit={false}/> : <InputDataUS logDate={this.state.customDate} localEdit={false}/>
                         }
                     </div>
                 </div>

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 
 import { submitBMIData } from "../../actions/trackerActions";
+import { calculatedBMILocal } from "../../actions/calActions";
 
 class InputData_US extends Component {
 
@@ -34,8 +35,24 @@ class InputData_US extends Component {
             bmi: +final_bmi.toFixed(2),
             date: new Date(this.props.logDate.getFullYear(),this.props.logDate.getMonth() , this.props.logDate.getDate())
         };
-        // console.log("New Data Logged! ", newBMI);
-        this.props.submitBMIData(newBMI);
+         // reset inputs
+         this.setState({
+            height_feet: "",
+            height_inches: "",
+            weight_pounds: ""
+        })
+       
+
+        // Locally or to Database
+        if(!this.props.localEdit) {
+            // console.log("New Data Logged! ", newBMI);
+            this.props.submitBMIData(newBMI);
+        } else {
+            const localBMI = {
+                bmi: newBMI.bmi
+            }
+            this.props.calculatedBMILocal(localBMI);
+       }
     };
 
     render() {
@@ -43,16 +60,16 @@ class InputData_US extends Component {
             <form class="col s12" onSubmit={this.onSubmit}>
             <div class="">
                 <div class="input-field col s6">
-                    <input onChange={this.onChange} value={this.state.height_feet} id="height_feet" type="number" min="0" max="500"/>
+                    <input onChange={this.onChange} value={this.state.height_feet} id="height_feet" type="number" min="0" max="500" required/>
                     <label htmlFor="height_feet">Feet</label>
                 </div>
                 <div class="input-field col s6">
-                    <input onChange={this.onChange} value={this.state.height_inches} id="height_inches" type="number" min="0" max="500"/>
+                    <input onChange={this.onChange} value={this.state.height_inches} id="height_inches" type="number" min="0" max="500" required/>
                     <label htmlFor="height_inches">Inches</label>
                 </div>
 
                 <div class="input-field col s12">
-                    <input onChange={this.onChange} value={this.state.weight_pounds} id="weight_pounds" type="number" min="0" max="500"/>
+                    <input onChange={this.onChange} value={this.state.weight_pounds} id="weight_pounds" type="number" min="0" max="500" required/>
                     <label htmlFor="weight_pounds">Pounds</label>
                 </div>
                 <div className="right-align">
@@ -77,7 +94,9 @@ class InputData_US extends Component {
 
 InputData_US.propTypes = {
     submitBMIData: PropTypes.func.isRequired,
-    userid: PropTypes.string.isRequired
+    calculatedBMILocal: PropTypes.func.isRequired,
+    userid: PropTypes.string.isRequired,
+    localEdit: PropTypes.bool.isRequired
 }
 const mapStateToProps = (state) => ({
     userid: state.auth.user.id
@@ -85,5 +104,5 @@ const mapStateToProps = (state) => ({
 
 export default connect(
     mapStateToProps,
-    {submitBMIData}
+    {submitBMIData,calculatedBMILocal}
 )(InputData_US);
