@@ -80,11 +80,11 @@ class Calculator extends Component {
                 <div className="container">
                     {/* Display BMI */}
                     <div className="row">
-                        <h2 style={{fontSize:"2.7rem"}} >BMI Calculator</h2>
+                        {/* <h2 style={{fontSize:"2.7rem"}}>Calculator</h2> */}
                     </div>
                     <div className="row"></div>
                     <div className="row"></div>
-                    <div className="row pink lighten-5" style={{padding:"0px 0px 10px 0px",borderRadius:"30px"}}>
+                    <div className="row pink lighten-5" style={{padding:"0px 0px 10px 0px",borderRadius:"20px"}}>
                         <div className="center align">
                             <div className="col s3 ">
                                 <h4>{this.props.localBMI}</h4>
@@ -93,14 +93,18 @@ class Calculator extends Component {
                                 <h4>:</h4>
                             </div>
                             <div className={this.state.displayClass}>
-                                <h4>{this.state.displayString}</h4>
+                                <h4><b>{this.state.displayString}</b></h4>
                             </div>
                         </div>
                     </div>
 
                     {/* Input */}
+                    <div className="row"></div>
+                    <div className="row"></div>
+                    <div className="row"></div>
+                    <div className="row"></div>
                     <div className="row">
-                    <div className="col s12 blue lighten-5" style={{padding:"30px 50px 0px 50px",borderRadius:"10px",minHeight:"300px"}}>
+                    <div className="col s12 l8 blue lighten-5 offset-s0 offset-l2" style={{padding:"30px 20px 0px 20px",borderRadius:"10px",minHeight:"300px"}}>
                         {/* Measurement Units */}
                         <div className="switch col s12 right-align">
                             <label>
@@ -121,7 +125,6 @@ class Calculator extends Component {
                         </div>
                     </div>
                     </div>
-                
                 
                     {/* Back Button */}
                     <div className="row">

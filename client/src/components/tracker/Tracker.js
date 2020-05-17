@@ -11,10 +11,11 @@ class Tracker extends Component {
         return(
             <div className="container">
                 <div className="section"></div>
+                <div className="row"></div>
                 <div className="row">
                     <Graph />
                 </div>
-
+                
                 <div className="row ">
                     <div className="col m6 s12">
                         <InputDataMain />
