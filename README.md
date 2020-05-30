@@ -15,7 +15,7 @@ Password: test123
 
 ## Installation
 ### Setup
-Download the project or\ Clone using
+Download the project or<br /> Clone using
 ```
 git clone https://github.com/JamesCrr/BMITracker_MERN.git
 ```
@@ -24,6 +24,11 @@ Make sure you have npm installed and run the following command to install packag
 ```
 npm install
 ``` 
+### Create your .env file 
+The server connects to the MongoDB using the URI from the .env file
+```
+mongoURI = Your MongoDB URI
+```
 ### Run on Local machine
 Starts up Server and Client on your local machine 
 ```

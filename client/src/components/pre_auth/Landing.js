@@ -12,8 +12,7 @@ class Landing extends Component {
                     </h4>
                     <br />
                     <p className="flow-text grey-text text-darken-1">
-                    A (minimal) MERN full-stack app with <br/>user authentication via
-                    passport and JWTs
+                    A small MERN full-stack app <br /> with User Authentication to track BMI
                     </p>
                 </div>
             </div>

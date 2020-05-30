@@ -8,7 +8,7 @@ import Landing from "./components/pre_auth/Landing.js";
 import Register from "./components/pre_auth/Register.js";
 import Login from "./components/pre_auth/Login.js";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 
 // Authorisation, Private Routes
 import jwt_decode from "jwt-decode";
