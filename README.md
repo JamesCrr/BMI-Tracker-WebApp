@@ -1,4 +1,4 @@
-# BMITracker_MERN
+# MERN Stack BMI Tracker
 A minimal BMI Tracker application. Purpose of this was to learn more about the MERN stack with authentication.\
 Hosted [here](https://bmitrack.herokuapp.com/) on Heroku.\
 **NOTE:** Initial startup of page might take a few minutes due to Heroku's free [dynos](https://www.heroku.com/dynos) plan
